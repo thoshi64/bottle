@@ -11,10 +11,10 @@
 #What to Execute
 For both scripts, I included my access key, secret access key, and associate tag just in case.
 
--test.py -> will output a csv of "also bought" and "also viewed" products   
+-test.py -> will output a csv of "also bought" and "also viewed" products -> ~30 min to complete   
     -you will need to change in main() the path for the normal file before executing   
   
--description.py -> will output a csv of the descriptions       
+-description.py -> will output a csv of the descriptions -> ~3 min to complete   
     -you will need to change in main() the path for the normal file before executing    
 
 #Example Final Outputs
