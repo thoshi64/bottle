@@ -24,7 +24,7 @@ def get_descriptions(list):
         elif pageinfo.find("div", { "class" : "a-section a-spacing-small", 'id' : 'productDescription' }) is not None:
             descrip = pageinfo.find("div", { "class" : "a-section a-spacing-small", 'id' : 'productDescription' }).text
         else:
-            descriplist.append({'ASIN' : product, 'Description' : None})
+            descrip = None
         descrip = descrip.replace('\n', '').replace('\t', '').replace('\r', '') #remove all "\n" "\t" "\r"
         descriplist.append({'ASIN' : product, 'Description' : descrip})
 
