@@ -7,8 +7,7 @@ Assumptions:
 
 import csv
 
-#my_file = str(raw_input("File path: "))
-my_file = "/Users/Thoshi64/bottle/AmazonTestDataShortestx2.csv" #switch to full file after testing
+my_file = "/Users/Thoshi64/bottle/AmazonTestData.csv" #testing
 
 def parse(raw_file, delimiter):
     """parses csv file into list format and return list variable"""
@@ -35,7 +34,7 @@ def parse(raw_file, delimiter):
     return ASIN_list
 
 
-def main():
+def main(): #testing
     list = parse(my_file, ',')
     print list
 
