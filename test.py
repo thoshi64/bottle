@@ -9,9 +9,9 @@ import string
 import time
 
 
-AWS_ACCESS_KEY_ID = "AKIAJH3LHWXFCW5MKY5A"
-AWS_SECRET_ACCESS_KEY = "0pMeZQOojGcktyNqyytfTjJZZgljUiC5I4gJsy7K"
-AWS_ASSOCIATE_TAG = "reddit0b3-20"
+AWS_ACCESS_KEY_ID = "input yours!"
+AWS_SECRET_ACCESS_KEY = "input yours!"
+AWS_ASSOCIATE_TAG = "input yours!"
 
  #initialize amazon api
 amazon = bottlenose.Amazon(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_ASSOCIATE_TAG, MaxQPS=0.9)
