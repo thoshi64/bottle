@@ -9,13 +9,13 @@ def get_descriptions(list):
 
     count = 0 #testing
     print 'List length:', len(list) #testing
-    
+
     descriplist = []
 
     for product in list:
         count+=1 #testing
         print count #testing
-        
+
         url = "http://www.amazon.com/dp/" + str(product)
         htmltext = requests.get(url).content
 
@@ -26,7 +26,8 @@ def get_descriptions(list):
             descrip = pageinfo.find("div", { "class" : "a-section a-spacing-small", 'id' : 'productDescription' }).text
         else:
             descrip = None
-        descrip = descrip.replace('\n', '').replace('\t', '').replace('\r', '') #remove all "\n" "\t" "\r"
+        if descrip is not None:
+            descrip = descrip.replace('\n', '').replace('\t', '').replace('\r', '') #remove all "\n" "\t" "\r"
         descriplist.append({'ASIN' : product, 'Description' : descrip})
 
     return descriplist
