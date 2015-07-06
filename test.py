@@ -222,7 +222,6 @@ def main():
 
     #testing
     single = "/Users/Thoshi64/bottle/AmazonTestDataSingle.csv"
-    shortestx2 = "/Users/Thoshi64/bottle/AmazonTestDataShortestx2.csv"
     shortest = "/Users/Thoshi64/bottle/AmazonTestDataShortest.csv"
     shorter = "/Users/Thoshi64/bottle/AmazonTestDataShorter.csv"
     short = "/Users/Thoshi64/bottle/AmazonTestDataShort.csv"
@@ -244,13 +243,13 @@ def main():
         list = pA.parse(normal,",")
 
         #get also view and bought products
-        #list2 = get_similar_products(list)
+        list2 = get_similar_products(list)
         list3 = get_viewed_products(list)
 
         #generate the final output csv file
-        #generate_csv(list2, 'AlsoBoughtViewedProducts_' + str(i) + '.csv')
+        generate_csv(list2, 'AlsoBoughtViewedProducts_' + str(i) + '.csv')
         generate_csv(list3, 'AlsoBoughtViewedProducts_' + str(i) + '.csv')
-        print 'done with ' + str(i) + '!'
+        #print 'done with ' + str(i) + '!'
         #generate_csv(list2, 'SimilarProducts-SimilarViewed.csv')
         #generate_csv(list3, 'SimilarProducts-SimilarViewed.csv')
 
