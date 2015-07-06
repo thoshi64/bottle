@@ -9,16 +9,17 @@ def get_descriptions(list):
 
     count = 0 #testing
     print 'List length:', len(list) #testing
+    
     descriplist = []
 
     for product in list:
         count+=1 #testing
         print count #testing
+        
         url = "http://www.amazon.com/dp/" + str(product)
         htmltext = requests.get(url).content
 
         pageinfo = BeautifulSoup(htmltext, 'lxml')
-        #print (pageinfo.prettify())
         if pageinfo.find("div", { "class" : "productDescriptionWrapper" }) is not None:
             descrip = pageinfo.find("div", { "class" : "productDescriptionWrapper" }).text
         elif pageinfo.find("div", { "class" : "a-section a-spacing-small", 'id' : 'productDescription' }) is not None:
@@ -47,15 +48,10 @@ def main():
     #initialize start time
     start = time.time()
 
-    single = "/Users/Thoshi64/bottle/AmazonTestDataSingle.csv"
-    shortest = "/Users/Thoshi64/bottle/AmazonTestDataShortest.csv"
-    shorter = "/Users/Thoshi64/bottle/AmazonTestDataShorter.csv"
-    short = "/Users/Thoshi64/bottle/AmazonTestDataShort.csv"
-    normal = "/Users/Thoshi64/bottle/AmazonTestData.csv"
+    normal = "/Users/Thoshi64/bottle/AmazonTestData.csv" #CHANGE THIS
 
     list = parseAmazon.parse(normal,',')
     descriplist = get_descriptions(list)
-    #print descriplist #testing
     generate_csv(descriplist, "DescriptionsList.csv")
 
     print 'It took', float(time.time()-start)/60.0, 'minutes.' #returns time to complete
