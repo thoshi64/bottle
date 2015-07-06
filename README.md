@@ -1,37 +1,30 @@
 #Readme
 
 #Requirements
--used Python 2.7.5
-
--BeautifulSoup -> pip install beautifulsoup4
-
--lxml -> pip install lxml
-
--requests -> pip install requests
-
--tablib -> pip install tablib
-
--bottlenose -> pip install bottlenose
+-used Python 2.7.5        
+-BeautifulSoup -> pip install beautifulsoup4    
+-lxml -> pip install lxml    
+-requests -> pip install requests     
+-tablib -> pip install tablib    
+-bottlenose -> pip install bottlenose    
 
 #What to Execute
 For both scripts, I included my access key, secret access key, and associate tag just in case.
 
--test.py -> will output a csv of "also bought" and "also viewed" products
-
-  -you will need to change in main() the path for the normal file before executing
+-test.py -> will output a csv of "also bought" and "also viewed" products   
+    -you will need to change in main() the path for the normal file before executing   
   
--description.py -> will output a csv of the descriptions
-
-  -you will need to change in main() the path for the normal file before executing
+-description.py -> will output a csv of the descriptions       
+    -you will need to change in main() the path for the normal file before executing    
 
 #Example Final Outputs
 Should anything malfunction, I included outputs for when I ran the scripts labeled as "AlsoBoughtViewedProducts_Final.csv" and "DescriptionsList_Final.csv"
 
 #Thought Process
-I started with understanding the different ways to scrape off Amazon and came to the conslusion of two alternatives, scrape through html and using the Amazon Product Advertising API.  The Amazon API doesn't offer an option for pulling descriptions so I was forced to pull the html and filter through that using BeautifulSoup.
+I started with understanding the different ways to scrape off Amazon and came to the conslusion of two alternatives, scrape through html and using the Amazon Product Advertising API.  The Amazon API doesn't offer an option for pulling descriptions so I was forced to pull the html and filter through that using BeautifulSoup.    
 
 -test.py
-  The script uses parseAmazon.py to parse the input csv given into an output list of ASINs.  That list is then fed into the get_similar_products and get_viewed_products.  The ouput lists from those calls are fed into generate_csv to create the final output file.
+  The script uses parseAmazon.py to parse the input csv given into an output list of ASINs.  That list is then fed into the get_similar_products and get_viewed_products.  The ouput lists from those calls are fed into generate_csv to create the final output file.     
   
   -In the output csv file, if the price and currency code show "None" it's because the product is out of stock.  Else if it shows "Too Low to Display" this is because of the MAP by the manufacturer.  Should the price go below the MAP, Amazon requires the shopper to add and view the price in the cart through the webpage.  
   
