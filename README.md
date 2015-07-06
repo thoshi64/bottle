@@ -9,7 +9,7 @@
 -bottlenose -> pip install bottlenose    
 
 #What to Execute
-For both scripts, you will need to include an access key, secret access key, and associate tag for the AWS account.
+For both scripts, you will need to include an access key, secret access key, and associate tag for the AWS and Associate account.
 
 -test.py -> will output a csv of "also bought" and "also viewed" products -> ~30 min to complete   
     -you will need to change in main() the path for the normal file before executing   
