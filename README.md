@@ -38,7 +38,7 @@ Challenges
   -In the API you can only call the highest price using the VariationSummary response group which in turn can only be called on a parent ASIN.  I wrote the method to check if the associated ASIN is a child or parent and grab the highest price from there.  If it was a child, I grabbed the ParentASIN from the Cart response group. 
 
 -Extra bugs
-  -The majority of challenges was dealing with the unstructured data that would be returned at times.  To list a few, the title sometimes included a trademark symbol that needed to be removed, one of the ASINs returned wonky "also viewed" products and kept crashing the script, testing for if there are any "also viewed" or "also bought" products.  All of these challenges lead to fixes in the code but I most likely did not account for all of them since I am limited by the dataset that was provided.
+  -The majority of challenges was dealing with the unstructured data that would be returned at times.  To list a few, the title sometimes included a trademark symbol that needed to be removed, one of the ASINs returned wonky "also viewed" products and kept crashing the script, testing for if there are any "also viewed" or "also bought" products.  All of these challenges led to fixes in the code but I most likely did not account for all of them since I am limited by the dataset and time constraint.
   
 
 
