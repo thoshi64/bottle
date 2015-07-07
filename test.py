@@ -83,12 +83,13 @@ def get_similar_products(list):
         #iterate through each similar product and add to list
         if ("SimilarProduct" in cart and _safe_get_element_text('Title', root.Cart.SimilarProducts.SimilarProduct) is not None):# HOW TO ACCOUNT FOR NO SIMILAR PRODUCTS
             for item2 in root.Cart.SimilarProducts.SimilarProduct:
-                sblist.append({'Original ASIN' : item,
-                               'Associated ASIN' : item2.ASIN,
-                               'Title' : item2.Title,
-                               'Price' : None,
-                               'Currency Code' : None,
-                               'Relationship' : "Also Bought"})
+                if _safe_get_element_text('Title', item2) is not None:
+                    sblist.append({'Original ASIN' : item,
+                                    'Associated ASIN' : item2.ASIN,
+                                    'Title' : item2.Title,
+                                    'Price' : None,
+                                    'Currency Code' : None,
+                                    'Relationship' : "Also Bought"})
 
     print 'Total # of \"Also Bought\" Products: ' + str(len(sblist)) #for testing
     count = 0 #testing
@@ -162,12 +163,13 @@ def get_viewed_products(list):
         #issue with ASIN = B004NK6DFE <- fixed
         if ("SimilarViewedProduct" in cart and _safe_get_element_text('Title', root.Cart.SimilarViewedProducts.SimilarViewedProduct) is not None):
             for item2 in root.Cart.SimilarViewedProducts.SimilarViewedProduct:
-                svlist.append({'Original ASIN':item,
-                               'Associated ASIN':item2.ASIN,
-                               'Title':item2.Title,
-                               'Price': None,
-                               'Currency Code':None,
-                               'Relationship':"Also Viewed"})
+                if _safe_get_element_text('Title', item2) is not None:
+                    svlist.append({'Original ASIN':item,
+                                   'Associated ASIN':item2.ASIN,
+                                   'Title':item2.Title,
+                                   'Price': None,
+                                   'Currency Code':None,
+                                   'Relationship':"Also Viewed"})
 
     print 'Total # of \"Also Viewed\" Products: ' + str(len(svlist))
     count = 0 #testing
