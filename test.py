@@ -81,7 +81,7 @@ def get_similar_products(list):
         print count #testing
         
         #iterate through each similar product and add to list
-        if ("SimilarProduct" in cart and _safe_get_element_text('Title', root.Cart.SimilarProducts.SimilarProduct) is not None):# HOW TO ACCOUNT FOR NO SIMILAR PRODUCTS
+        if "SimilarProduct" in cart:# HOW TO ACCOUNT FOR NO SIMILAR PRODUCTS
             for item2 in root.Cart.SimilarProducts.SimilarProduct:
                 if _safe_get_element_text('Title', item2) is not None:
                     sblist.append({'Original ASIN' : item,
@@ -161,7 +161,7 @@ def get_viewed_products(list):
 
         #iterate through each similar product and add to list
         #issue with ASIN = B004NK6DFE <- fixed
-        if ("SimilarViewedProduct" in cart and _safe_get_element_text('Title', root.Cart.SimilarViewedProducts.SimilarViewedProduct) is not None):
+        if "SimilarViewedProduct" in cart:
             for item2 in root.Cart.SimilarViewedProducts.SimilarViewedProduct:
                 if _safe_get_element_text('Title', item2) is not None:
                     svlist.append({'Original ASIN':item,
